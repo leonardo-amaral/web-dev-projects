@@ -1,46 +1,50 @@
-import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
-import { ProjectCard } from "./ProjectCard";
-import projImg1 from "../assets/img/project-img1.png";
-import projImg2 from "../assets/img/project-img2.png";
-import projImg3 from "../assets/img/project-img3.png";
-import colorSharp2 from "../assets/img/color-sharp2.png";
 import 'animate.css';
+import { Col, Container, Nav, Row, Tab } from "react-bootstrap";
 import TrackVisibility from 'react-on-screen';
+import colorSharp2 from "../assets/img/color-sharp2.png";
+import { ProjectCard } from "./ProjectCard";
 
 export const Projects = () => {
 
   const projects = [
     {
-      title: "Business Startup",
+      title: "Metaverse Website",
       description: "Design & Development",
-      imgUrl: projImg1,
+      imgUrl: "https://camo.githubusercontent.com/1b7b54dfd3e999dd845d83144d1fe5c71c8aac3247bfe8c6fcd4ffed308cba74/68747470733a2f2f692e6962622e636f2f736253485748302f5468756d626e61696c2d312e706e67",
     },
     {
-      title: "Business Startup",
+      title: "Real Time Chat Application",
       description: "Design & Development",
-      imgUrl: projImg2,
+      imgUrl: "https://camo.githubusercontent.com/ffcc11f9f8375f688d430e6010fc0837cb2dded4d84fa59cd7c44e3e1553b4ab/68747470733a2f2f692e7974696d672e636f6d2f76692f5a77464133594d666b6f632f6d617872657364656661756c742e6a7067",
     },
     {
-      title: "Business Startup",
+      title: "Crypto Cotation",
       description: "Design & Development",
-      imgUrl: projImg3,
+      imgUrl: "https://user-images.githubusercontent.com/100500192/208546914-5024c871-3e19-42a5-9412-3c64980dfb67.png",
     },
     {
-      title: "Business Startup",
+      title: "FlyByCockPits",
       description: "Design & Development",
-      imgUrl: projImg1,
+      imgUrl: "https://user-images.githubusercontent.com/100500192/208547327-f92ecf83-f44a-44c1-8e74-6fa70198da07.png",
     },
     {
-      title: "Business Startup",
+      title: "ShareME",
       description: "Design & Development",
-      imgUrl: projImg2,
+      imgUrl: "https://camo.githubusercontent.com/1ea25d0720f48438d0f6b498e75fd220181e989c695311fa0686162ef5cb20ff/68747470733a2f2f692e6962622e636f2f38634c666a33582f696d6167652e706e67",
     },
     {
-      title: "Business Startup",
+      title: "This Portifolio",
       description: "Design & Development",
-      imgUrl: projImg3,
+      imgUrl: "https://user-images.githubusercontent.com/100500192/208547995-e6bdc72e-8f20-4e01-8399-10834fc86b61.png",
     },
   ];
+
+  const Languages = [
+    { name: "Portuguese", level: "Fluente" },
+    { name: "English", level: "Intermediary" },
+    { name: "German", level: "Basic" },
+  ]
+
 
   return (
     <section className="project" id="project">
@@ -49,45 +53,55 @@ export const Projects = () => {
           <Col size={12}>
             <TrackVisibility>
               {({ isVisible }) =>
-              <div className={isVisible ? "animate__animated animate__fadeIn": ""}>
-                <h2>Projects</h2>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                <Tab.Container id="projects-tabs" defaultActiveKey="first">
-                  <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
-                    <Nav.Item>
-                      <Nav.Link eventKey="first">Tab 1</Nav.Link>
-                    </Nav.Item>
-                    <Nav.Item>
-                      <Nav.Link eventKey="second">Tab 2</Nav.Link>
-                    </Nav.Item>
-                    <Nav.Item>
-                      <Nav.Link eventKey="third">Tab 3</Nav.Link>
-                    </Nav.Item>
-                  </Nav>
-                  <Tab.Content id="slideInUp" className={isVisible ? "animate__animated animate__slideInUp" : ""}>
-                    <Tab.Pane eventKey="first">
-                      <Row>
-                        {
-                          projects.map((project, index) => {
-                            return (
-                              <ProjectCard
-                                key={index}
-                                {...project}
+                <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
+                  <h2>About Me</h2>
+                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                  <Tab.Container id="projects-tabs" defaultActiveKey="first">
+                    <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
+                      <Nav.Item>
+                        <Nav.Link eventKey="first">Projects Develop</Nav.Link>
+                      </Nav.Item>
+                      <Nav.Item>
+                        <Nav.Link eventKey="second">Languages</Nav.Link>
+                      </Nav.Item>
+                      <Nav.Item>
+                        <Nav.Link eventKey="third">Experience</Nav.Link>
+                      </Nav.Item>
+                    </Nav>
+                    <Tab.Content id="slideInUp" className={isVisible ? "animate__animated animate__slideInUp" : ""}>
+                      <Tab.Pane eventKey="first">
+                        <Row>
+                          {
+                            projects.map((project, index) => {
+                              return (
+                                <ProjectCard
+                                  key={index}
+                                  {...project}
                                 />
-                            )
-                          })
-                        }
-                      </Row>
-                    </Tab.Pane>
-                    <Tab.Pane eventKey="section">
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque quam, quod neque provident velit, rem explicabo excepturi id illo molestiae blanditiis, eligendi dicta officiis asperiores delectus quasi inventore debitis quo.</p>
-                    </Tab.Pane>
-                    <Tab.Pane eventKey="third">
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque quam, quod neque provident velit, rem explicabo excepturi id illo molestiae blanditiis, eligendi dicta officiis asperiores delectus quasi inventore debitis quo.</p>
-                    </Tab.Pane>
-                  </Tab.Content>
-                </Tab.Container>
-              </div>}
+                              )
+                            })
+                          }
+                        </Row>
+                      </Tab.Pane>
+                      <Tab.Pane eventKey="second">
+                        <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+                          {Languages.map((item, index) => (
+                            <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'flex-start', justifyContent: 'space-between', gap: '10vw', marginLeft: '15vw' }}>
+                              <h1>
+                                {item.name}
+                              </h1>
+                              <p>{item.level}</p>
+
+                            </div>
+                          ))}
+                        </div>
+                      </Tab.Pane>
+                      <Tab.Pane eventKey="third">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque quam, quod neque provident velit, rem explicabo excepturi id illo molestiae blanditiis, eligendi dicta officiis asperiores delectus quasi inventore debitis quo.</p>
+                      </Tab.Pane>
+                    </Tab.Content>
+                  </Tab.Container>
+                </div>}
             </TrackVisibility>
           </Col>
         </Row>
